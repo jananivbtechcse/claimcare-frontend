@@ -1,0 +1,56 @@
+/* .left-panel {
+  background: linear-gradient(135deg, #2c7be5, #20c997);
+}
+  */
+
+
+  .left-panel {
+  background: url('/src/assets/CHĂM\ SÓC\ SỨC\ KHỎE\ TOÀN\ DIỆN\ LÀ\ GÌ_.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+/* Optional overlay for better text visibility */
+.left-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* dark overlay */
+}
+
+/* Make text appear above overlay */
+.left-panel .text-center {
+  position: relative;
+  z-index: 2;
+}
+
+.login-card {
+  width: 380px;
+  border-radius: 12px;
+}
+
+.input-field {
+  height: 45px;
+  border-radius: 8px;
+  padding-right: 40px;
+}
+
+.login-btn {
+  background: linear-gradient(to right, #2c7be5, #20c997);
+  color: white;
+  border: none;
+  height: 45px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+
+.toggle-eye {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+}

@@ -1,0 +1,140 @@
+/* ── CONTAINER ─────────────────────────────────────────────────────────── */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;           /* prevent the outer shell from scrolling */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ── SIDEBAR (fixed, never scrolls) ────────────────────────────────────── */
+.sidebar {
+  width: 240px;
+  min-width: 240px;           /* don't let flexbox shrink it */
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: #1e3a5f;
+  color: white;
+  padding: 20px;
+  overflow-y: auto;           /* if menu is very long it scrolls internally */
+  z-index: 100;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.brand-icon {
+  font-size: 1.4rem;
+}
+
+.logo {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+}
+
+.menu li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.menu li.active {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.menu li.active a {
+  font-weight: 600;
+}
+
+/* ── MAIN CONTENT WRAPPER ───────────────────────────────────────────────── */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;           /* clip so only .content scrolls */
+  background: #f5f7fa;
+}
+
+/* ── NAVBAR (fixed at top, never scrolls) ───────────────────────────────── */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  flex-shrink: 0;             /* never shrink — stays full height always */
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+.welcome {
+  margin: 0;
+  font-size: 14px;
+  color: gray;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.role-badge {
+  background: #e0ecff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: #2c7be5;
+  font-size: 12px;
+}
+
+.logout-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* ── PAGE CONTENT (only this scrolls) ──────────────────────────────────── */
+.content {
+  flex: 1;
+  overflow-y: auto;           /* ← THE key line: only content scrolls */
+  padding: 24px;
+}
+
+/* ── CARDS ──────────────────────────────────────────────────────────────── */
+.card {
+  border-radius: 12px !important;
+  border: none !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ── TABLE ──────────────────────────────────────────────────────────────── */
+.table {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
